@@ -53,6 +53,8 @@ struct domain_info
     char const* name = "";
     char const* ansi_color_code = "\u001b[38;5;244m";
 
+    void* userdata = nullptr;
+
     static constexpr domain_info make_named(char const* name)
     {
         domain_info di;
@@ -127,7 +129,7 @@ struct domain_info
 
 namespace rlog::detail
 {
-struct domain_registerer
+struct RLOG_API domain_registerer
 {
     domain_registerer(domain_info* domain);
 };

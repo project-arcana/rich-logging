@@ -8,8 +8,7 @@ endif()
 # =========================================
 # global options
 
-option(RICH_LOG_FORCE_MACRO_PREFIX "if true, only RICH_ macro versions are available" OFF)
-
+option(RLOG_FORCE_MACRO_PREFIX "if true, only RICH_ macro versions are available" OFF)
 
 # =========================================
 # define library
@@ -30,6 +29,7 @@ target_link_libraries(rich-log PUBLIC
 # =========================================
 # set up compile flags
 
-if (RICH_LOG_FORCE_MACRO_PREFIX)
+# the second option is for backwards compatibility with the previous name
+if (RLOG_FORCE_MACRO_PREFIX OR RICH_LOG_FORCE_MACRO_PREFIX)
     target_compile_definitions(rich-log PUBLIC RICH_LOG_FORCE_MACRO_PREFIX)
 endif()

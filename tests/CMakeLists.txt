@@ -9,7 +9,6 @@ add_arcana_test(tests-rich-log "${SOURCES}")
 
 target_link_libraries(tests-rich-log PUBLIC
     clean-core
-    clean-ranges
     typed-geometry
     rich-log
 )
